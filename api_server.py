@@ -8,7 +8,6 @@ Usage:
 import asyncio
 import json
 import os
-import sys
 import time
 
 from fastapi import FastAPI
@@ -28,9 +27,6 @@ app.add_middleware(
 )
 
 BASE_DIR = os.path.dirname(__file__)
-PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))
-VER_DIR = os.path.join(PROJECT_ROOT, "ver1.0")
-sys.path.insert(0, VER_DIR)
 
 from rag_query import (  # noqa: E402
     NOT_FOUND_MSG,
@@ -56,7 +52,7 @@ from rag_query import (  # noqa: E402
     build_evidence_block,
 )
 
-STORE_DIR = os.path.join(VER_DIR, "rag_store")
+STORE_DIR = os.environ.get("RAG_STORE_DIR", os.path.join(BASE_DIR, "rag_store"))
 index_full, index_summary, index_title, metas, bm25, bm25_title = load_store(STORE_DIR)
 indices = {"full": index_full, "sum": index_summary, "title": index_title}
 
