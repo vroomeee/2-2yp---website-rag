@@ -1,0 +1,30 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Node / frontend
+/node_modules/
+/.react-router/
+/build/
+/dist/
+/.vite/
+/.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# Local artifacts
+*.log
