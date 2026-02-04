@@ -429,7 +429,7 @@ def answer_or_request(q,ctx,allow_more=True,relax_context=False,mode="other"):
         "비교 질문이면 2열 표 형식으로 답하세요. 질문에 나온 비교 대상을 각 열 제목으로 쓰고, "
         "각 셀에 근거를 요약하세요.\n"
     ) if mode=="comparison" else ""
-    base_instruction="문맥만 사용하세요." if not relax_context else "문맥을 우선 사용하세요."
+    base_instruction="문맥만 사용하세요." if not relax_context else "문맥을 우선 사용하세요. 문맥에 없지만 일반적익 지식/상식에 해당하는 부분은 문맥 근거를 바탕으로 쓴 것이 아니라는 것을 명시하며 답변에 쓰세요."
     prompt=(
         f"당신은 검색 증강 어시스턴트입니다. {base_instruction} "
         "근거는 [1], [2]처럼 본문에 인라인으로 표시하세요. "

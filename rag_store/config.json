@@ -1,0 +1,7 @@
+{
+  "embed_model": "text-embedding-3-large",
+  "chunk_tokens": 700,
+  "overlap_tokens": 120,
+  "min_chunk_chars": 200,
+  "count": 3727
+}
